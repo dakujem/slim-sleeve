@@ -19,13 +19,13 @@ Slim v4 gives you even more freedom to build your own stack, so if you do not li
 
 ## The Stack
 
-**Slim Psr7 HTTP**\
-Comes from the authors of Slim and was a vital part of it prior to version v4.
-> :zap: currently using nyholm/psr7 because of an issue in slim/psr7. Info on how to swap the HTTP implementation can be found in the [Slim v4 documentation](https://github.com/slimphp/Slim/blob/4.x/README.md) 
+The stack consists of a PSR-7 HTTP implementation, Slim request dispatcher, router, middleware for security, view layer and a thin database abstraction layer.
 
-**Pimple container**\
-Fast, stable, proven, lightweight.\
-Sleeve extends Pimple to add a touch of convenience.
+The directory structure and the stack are prepared in a way to advocate good coding practices and layer separation.
+
+To dive deeper, read the [tech docs](docs/tech.md).
+
+
 
 
 ## The Run
