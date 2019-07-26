@@ -8,22 +8,25 @@ Let me rephrase, any of these can be swapped for other package or removed comple
 
 **Slim Psr7 HTTP**\
 Comes from the authors of Slim and was a vital part of it prior to version v4.
-> :zap: currently using nyholm/psr7 because of an issue in slim/psr7. Info on how to swap the HTTP implementation can be found in the [Slim v4 documentation](https://github.com/slimphp/Slim/blob/4.x/README.md) 
+Info on how to swap the HTTP implementation can be found in the [Slim v4 documentation](https://github.com/slimphp/Slim/blob/4.x/README.md).
+> :zap: currently using nyholm/psr7 because of an issue in slim/psr7.
 
 **Pimple container**\
 Fast, stable, proven, lightweight.\
-Sleeve extends Pimple to add a touch of convenience.
+_Sleeve_ extends Pimple to add a touch of convenience.
 
 
 - JWT
-- tracy
+- tracy / symfony debug
 - twig
 - fractal
 - validation
 
+
+
 ## The Directory Structure
 
-The basic directory structure provides simple guidelines to structure your code:
+The top-level directory structure provides guidelines to structure your code:
 ```
 ─ /  (root)
   ├─ app/
@@ -32,12 +35,7 @@ The basic directory structure provides simple guidelines to structure your code:
   ├─ services/
   ├─ storage/
   ├─ public/
-  |  ├─ img/, js/, css/, ...
-  |  └─ storage/
-  ├─ tests/
-  ├─ docs/
-  ├─ log/
-  └─ temp/
+  └─ ...
 ```
 
 **/app**\
@@ -53,12 +51,42 @@ Your PHP services that compose the layer between third party libraries, foreign 
 Put your configuration files here.
 
 **/storage**\
-Private storage space for your local storage adapter. For example for user uploads.
+Private storage space for your local storage adapter. For example for user uploads or generated files.
 
 **/public**\
 This is the place for _public_ assets (HTML, JS, CSS, images, ...). This is the only folder where the server should be able to access. Your document root.
 
+Many times it is handy that the user uploads or generated files cen be accessed directly by the web server:
+```
+─ /  (root)
+  ├─ ...
+  ├─ public/
+  |  └─ storage/   ─┐
+  ├─ storage/       | (symlink)
+  |  └─ public/   <─┘
+  └─ ...
+```
 **/public/storage**\
-This is a publicly accessible storage. It is a good practice to symlink here from your private storage.
+This is a publicly accessible storage. It is a good practice to symlink here from a folder in your private storage (e.g. `/storage/public`). This way you only have _one storage_ folder to care about, keeping the utility of a dedicated public storage.
 
-I hope the other dirs are self-explanatory.
+I hope these dirs are self-explanatory:
+```
+─ /  (root)
+  ├─ ...
+  ├─ tests/
+  ├─ temp/
+  ├─ log/
+  ├─ docs/
+  └─ ...
+```
+
+Finally, migrations, service scripts, console commands and other stuff of that nature can be placed in the `bin` directory:
+```
+─ /  (root)
+  ├─ ...
+  ├─ bin/
+  |  └─ migrations/
+  └─ ...
+```
+In case your application is console-heavy, consider creating a separate top-level dir for its logic, i.e. `/console`.
+
