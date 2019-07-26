@@ -1,6 +1,7 @@
 # Technical Dox
 
-This is the place where you would put your project documentation.
+In-depth information on tech used in this skeleton app.
+
 
 ## The Stack
 
@@ -56,7 +57,8 @@ Private storage space for your local storage adapter. For example for user uploa
 **/public**\
 This is the place for _public_ assets (HTML, JS, CSS, images, ...). This is the only folder where the server should be able to access. Your document root.
 
-Many times it is handy that the user uploads or generated files cen be accessed directly by the web server:
+**/public/storage**\
+A publicly accessible storage. It is a good practice to symlink here from a folder in your private storage (e.g. `/storage/public`).
 ```
 ─ /  (root)
   ├─ ...
@@ -66,27 +68,29 @@ Many times it is handy that the user uploads or generated files cen be accessed 
   |  └─ public/   <─┘
   └─ ...
 ```
-**/public/storage**\
-This is a publicly accessible storage. It is a good practice to symlink here from a folder in your private storage (e.g. `/storage/public`). This way you only have _one storage_ folder to care about, keeping the utility of a dedicated public storage.
+ This way you only have _one storage_ folder to care about, keeping the utility of a dedicated public storage. Many times it is handy that the user uploads or generated files can be accessed directly by the web server, mostly for performance resons.
 
+**/tests**, **/docs**, **/temp**, **/log**\
 I hope these dirs are self-explanatory:
 ```
 ─ /  (root)
   ├─ ...
   ├─ tests/
+  ├─ docs/
   ├─ temp/
   ├─ log/
-  ├─ docs/
   └─ ...
 ```
 
+**/bin**\
 Finally, migrations, service scripts, console commands and other stuff of that nature can be placed in the `bin` directory:
 ```
 ─ /  (root)
   ├─ ...
   ├─ bin/
+  |  ├─ console/
   |  └─ migrations/
   └─ ...
 ```
-In case your application is console-heavy, consider creating a separate top-level dir for its logic, i.e. `/console`.
+In case your application is console-heavy, consider making the directory containing your console stuff a top-level directory, i.e. `/console`.
 
