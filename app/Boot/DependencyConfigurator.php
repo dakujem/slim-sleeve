@@ -3,7 +3,7 @@
 
 namespace App\Boot;
 
-use Api\Controllers\Session;
+use Api\Controllers\SessionController;
 use Api\Middleware\RouteGuardFactory;
 use Domain\Services\Jwt;
 use Psr\Container\ContainerInterface as Container;
@@ -28,7 +28,7 @@ class DependencyConfigurator implements SlimConfiguratorInterface
 
 
         $container['!session'] = function (Container $container) {
-            return new Session();
+            return new SessionController();
         };
 
 

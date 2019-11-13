@@ -29,6 +29,21 @@ class MiddlewareConfigurator implements SlimConfiguratorInterface
     {
         $container = $slim->getContainer();
 
+
+#		++-------------------------------------------------------------------++
+#		||    Routing                                                        ||
+#		++-------------------------------------------------------------------++
+
+        $slim->addRoutingMiddleware();
+
+
+#		++-------------------------------------------------------------------++
+#		||    Error Handling                                                 ||
+#		++-------------------------------------------------------------------++
+
+        $slim->addErrorMiddleware($container->settings['dev'], TRUE, TRUE);
+
+
 #		++-------------------------------------------------------------------++
 #		||    Authentication & Authorization & JWT                           ||
 #		++-------------------------------------------------------------------++
@@ -92,6 +107,7 @@ class MiddlewareConfigurator implements SlimConfiguratorInterface
 #		||    CORS                                                           ||
 #		++-------------------------------------------------------------------++
 
+        // TODO
         $slim->add(function (Request $request, Handler $next) {
             $response = $next->handle($request);
             return $response

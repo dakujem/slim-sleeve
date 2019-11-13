@@ -7,6 +7,7 @@ use Psr\Http\Message\ResponseInterface as Response;
 use Psr\Http\Message\ServerRequestInterface as Request;
 use Slim\App;
 use Slim\Exception\HttpNotFoundException;
+use Slim\Interfaces\RouteCollectorProxyInterface as Group;
 
 
 /**
@@ -24,15 +25,15 @@ class RouteRegistrator implements SlimConfiguratorInterface
     public function configure(App $slim): void
     {
         $self = $this; // this instance, to be used within the callables below
-        $slim->group('/api', function () use ($self, $slim) {
+        $slim->group('/api', function (Group $group) use ($self) {
 
             // Authentication
-            $slim->get('/session', '!session:read');
-            $slim->post('/session', '!session:create');
+            $group->get('/session', '!session:read');
+            $group->post('/session', '!session:create');
 
 
             // Self profile
-            $slim->get("/self/profile", function (Request $request, Response $response) {
+            $group->get("/self/profile", function (Request $request, Response $response) {
                 // TODO return the authenticated user identity
             });
 

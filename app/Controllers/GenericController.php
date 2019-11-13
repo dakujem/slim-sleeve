@@ -7,7 +7,7 @@ namespace Api\Controllers;
 /**
  * Generic CRUD controller.
  */
-final class Generic extends BaseController
+final class GenericController extends BaseController
 {
 
 }

@@ -10,7 +10,7 @@ use Psr\Http\Message\ServerRequestInterface as Request;
 /**
  * Session Controller.
  */
-final class Session extends BaseController
+final class SessionController extends BaseController
 {
 
 
