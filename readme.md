@@ -8,6 +8,8 @@ I had a Slim v3 skeleton app lying around and decided to build a Slim v4 dev sta
 
 # Slim Sleeve
 
+> 💿 composer create-project dakujem/slim-sleeve -s dev
+
 A **Slim v4** skeleton app.\
 🌳🌳🌳🐘🌳🌳🌳
 

@@ -1,6 +1,7 @@
 {
   "name": "dakujem/slim-sleeve",
-  "description": "A lightweight skeleton app for Slim v4.",
+  "license": "Unlicense",
+  "description": "A lightweight skeleton app for Slim v4 \uD83D\uDC18.",
   "type": "project",
   "keywords": [
     "slim"
@@ -59,5 +60,10 @@
   "scripts": {
     "test": "@test:local",
     "test:local": "tester tests -C"
+  },
+  "extra": {
+    "branch-alias": {
+      "dev-master": "1.0.x-dev"
+    }
   }
 }
