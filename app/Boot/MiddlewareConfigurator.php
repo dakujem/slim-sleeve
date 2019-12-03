@@ -41,7 +41,7 @@ class MiddlewareConfigurator implements SlimConfiguratorInterface
 #		||    Error Handling                                                 ||
 #		++-------------------------------------------------------------------++
 
-        $slim->addErrorMiddleware($container->settings['dev'], TRUE, TRUE);
+        $slim->addErrorMiddleware($container->settings['dev'], true, true);
 
 
 #		++-------------------------------------------------------------------++

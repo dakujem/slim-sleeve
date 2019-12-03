@@ -22,7 +22,7 @@ class RequestPathMethodRule
      */
     protected $options = [
         "path" => ["/"],
-        "ignore" => []
+        "ignore" => [],
     ];
 
 
@@ -52,8 +52,8 @@ class RequestPathMethodRule
         $unpack = function ($passthrough, $passthroughMethods) {
             if (is_int($passthrough) && !is_array($passthroughMethods)) {
                 $passthrough = $passthroughMethods;
-                $passthroughMethods = NULL;
-            } elseif (is_string($passthrough) && $passthroughMethods !== NULL && !is_array($passthroughMethods)) {
+                $passthroughMethods = null;
+            } elseif (is_string($passthrough) && $passthroughMethods !== null && !is_array($passthroughMethods)) {
                 $passthroughMethods = [$passthroughMethods];
             }
             return [$passthrough, $passthroughMethods];

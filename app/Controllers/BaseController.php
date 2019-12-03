@@ -21,7 +21,7 @@ abstract class BaseController
     function __invoke(Request $request, Response $response, ...$args): ResponseInterface
     {
         $requestHandler = $this->requestHandler($request->getMethod());
-        if ($requestHandler === NULL) {
+        if ($requestHandler === null) {
             throw new NotImplementedException('Neviem ako dalej. Pomozte mi.');
         }
         return call_user_func($requestHandler, $request, $response, ...$args);
@@ -50,14 +50,14 @@ abstract class BaseController
      */
     protected function requestHandler(string $method): ?callable
     {
-        return $this->requestHandlers() [$method] ?? NULL;
+        return $this->requestHandlers() [$method] ?? null;
     }
 
 
     /**
      * OPTIONS request handler.
      *
-     * @param Request $request
+     * @param Request  $request
      * @param Response $response
      */
     function options(Request $request, Response $response): ResponseInterface
