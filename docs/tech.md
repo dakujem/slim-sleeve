@@ -68,7 +68,7 @@ A publicly accessible storage. It is a good practice to symlink here from a fold
   |  └─ public/   <─┘
   └─ ...
 ```
- This way you only have _one storage_ folder to care about, keeping the utility of a dedicated public storage. Many times it is handy that the user uploads or generated files can be accessed directly by the web server, mostly for performance resons.
+ This way you only have _one storage_ folder to care about, keeping the utility of a dedicated public storage. Many times it is handy that the user uploads or generated files can be accessed directly by the web server, mostly for performance reasons.
 
 **/tests**, **/docs**, **/temp**, **/log**\
 I hope these dirs are self-explanatory:

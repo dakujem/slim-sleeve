@@ -9,7 +9,7 @@ I had a Slim v3 skeleton app lying around and decided to build a Slim v4 dev sta
 # Slim Sleeve
 
 A **Slim v4** skeleton app.\
-🌳🌳🐘🌳🌳
+🌳🌳🌳🐘🌳🌳🌳
 
 
 ## The Freedom
@@ -40,18 +40,18 @@ php -S localhost:8000 -t public
 
 ## The License
 
-Comes with one of the "I don't care" licenses. Use it for whatever purpose you like.
+Comes with one of the "I don't care" licenses. Use the code for whatever purpose you like.
 
 
 -------
 
-TODOs
+**TODOs**
 - [x] bootstrapping
 - [x] dir structure
 - [x] JWT
-- [ ] auth (-entication / -orization) [do or do not?]
-- [ ] tracy
-- [ ] twig
+- [ ] auth (-entication / -orization)  // do or do not?
+- [ ] tracy / symfony debugger
+- [ ] twig / latte
 - [ ] fractal
 - [ ] validation
 - [ ] remove ballast
