@@ -21,6 +21,7 @@
     "ext-json": "*",
     "container-interop/container-interop": "^1.2",
     "dakujem/cumulus": "^1.3",
+    "dakujem/latter": "dev-master",
     "dakujem/sleeve": "^1",
     "dakujem/time": "^1",
     "fig/http-message-util": "^1.1",
@@ -43,8 +44,8 @@
   },
   "repositories": [
     {
-      "type": "vcs",
-      "url": "https://github.com/dakujem/sleeve"
+      "type": "github",
+      "url": "https://github.com/dakujem/latter"
     }
   ],
   "autoload": {

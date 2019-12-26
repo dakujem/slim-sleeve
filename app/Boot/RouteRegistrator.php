@@ -43,7 +43,15 @@ class RouteRegistrator implements SlimConfiguratorInterface
         $slim->get("[/]", function (Request $request, Response $response) {
             $response->getBody()->write('Hello Worlds!');
             return $response;
-        });
+        })->setName('index');
+
+        // Latte
+        $slim->get("/page[/{name}]", function (Request $request, Response $response, $args) {
+
+            $this['view']->render($response, 'page', $args);
+
+            return $response;
+        })->setName('page');
 
         /*
          * Catch-all route to serve a 404 Not Found page if none of the routes match
