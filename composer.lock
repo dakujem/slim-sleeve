@@ -354,27 +354,28 @@
         },
         {
             "name": "latte/latte",
-            "version": "v2.5.4",
+            "version": "v2.10.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nette/latte.git",
-                "reference": "211bec057917e1d771aa09fc334cde1229738860"
+                "reference": "596b28bf098ebb852732d60b00538139a009c4db"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nette/latte/zipball/211bec057917e1d771aa09fc334cde1229738860",
-                "reference": "211bec057917e1d771aa09fc334cde1229738860",
+                "url": "https://api.github.com/repos/nette/latte/zipball/596b28bf098ebb852732d60b00538139a009c4db",
+                "reference": "596b28bf098ebb852732d60b00538139a009c4db",
                 "shasum": ""
             },
             "require": {
                 "ext-json": "*",
                 "ext-tokenizer": "*",
-                "php": ">=7.1"
+                "php": ">=7.1 <8.2"
             },
             "conflict": {
                 "nette/application": "<2.4.1"
             },
             "require-dev": {
+                "nette/php-generator": "^3.3.4",
                 "nette/tester": "~2.0",
                 "nette/utils": "^3.0",
                 "phpstan/phpstan": "^0.12",
@@ -382,13 +383,18 @@
             },
             "suggest": {
                 "ext-fileinfo": "to use filter |datastream",
+                "ext-iconv": "to use filters |reverse, |substring",
                 "ext-mbstring": "to use filters like lower, upper, capitalize, ...",
+                "nette/php-generator": "to use tag {templatePrint}",
                 "nette/utils": "to use filter |webalize"
             },
+            "bin": [
+                "bin/latte-lint"
+            ],
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.5-dev"
+                    "dev-master": "2.10-dev"
                 }
             },
             "autoload": {
@@ -399,8 +405,8 @@
             "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "BSD-3-Clause",
-                "GPL-2.0",
-                "GPL-3.0"
+                "GPL-2.0-only",
+                "GPL-3.0-only"
             ],
             "authors": [
                 {
@@ -424,7 +430,11 @@
                 "template",
                 "twig"
             ],
-            "time": "2019-12-11T19:48:05+00:00"
+            "support": {
+                "issues": "https://github.com/nette/latte/issues",
+                "source": "https://github.com/nette/latte/tree/v2.10.8"
+            },
+            "time": "2022-01-04T14:13:28+00:00"
         },
         {
             "name": "nesbot/carbon",
@@ -851,58 +861,6 @@
                 "psr"
             ],
             "time": "2017-02-14T16:28:37+00:00"
-        },
-        {
-            "name": "psr/http-factory",
-            "version": "1.0.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/php-fig/http-factory.git",
-                "reference": "12ac7fcd07e5b077433f5f2bee95b3a771bf61be"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/php-fig/http-factory/zipball/12ac7fcd07e5b077433f5f2bee95b3a771bf61be",
-                "reference": "12ac7fcd07e5b077433f5f2bee95b3a771bf61be",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=7.0.0",
-                "psr/http-message": "^1.0"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.0.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Psr\\Http\\Message\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "PHP-FIG",
-                    "homepage": "http://www.php-fig.org/"
-                }
-            ],
-            "description": "Common interfaces for PSR-7 HTTP message factories",
-            "keywords": [
-                "factory",
-                "http",
-                "message",
-                "psr",
-                "psr-17",
-                "psr-7",
-                "request",
-                "response"
-            ],
-            "time": "2019-04-30T12:38:16+00:00"
         },
         {
             "name": "psr/http-message",
@@ -2066,5 +2024,6 @@
         "ext-gettext": "*",
         "ext-json": "*"
     },
-    "platform-dev": []
+    "platform-dev": [],
+    "plugin-api-version": "2.1.0"
 }
